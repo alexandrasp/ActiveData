@@ -165,15 +165,10 @@ class SaveQueries(object):
             pass
 
 
-
-
 SCHEMA = {
     "settings": {
         "index.number_of_shards": 3,
-        "index.number_of_replicas": 2,
-        "index.store.throttle.type": "merge",
-        "index.cache.filter.expire": "1m",
-        "index.cache.field.type": "soft",
+        "index.number_of_replicas": 2
     },
     "mappings": {
         "_default_": {
@@ -213,9 +208,7 @@ SCHEMA = {
                 },
                 "query": {
                     "type": "object",
-                    "enabled": False,
-                    "index": "no",
-                    "store": "yes"
+                    "enabled": False
                 }
             }
         }

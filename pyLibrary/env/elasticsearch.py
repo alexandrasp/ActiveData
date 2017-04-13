@@ -17,6 +17,8 @@ from copy import deepcopy
 
 import mo_json
 from mo_logs import Log, strings
+
+from mo_json import value2json
 from mo_logs.exceptions import Except
 from mo_logs.strings import utf82unicode
 from mo_threads import Lock
@@ -649,9 +651,9 @@ class Cluster(object):
                 )
                 schema.settings.index.number_of_replicas = health.number_of_nodes - 1
 
-        self.post(
+        self.put(
             "/" + index,
-            data=schema,
+            json=schema,
             headers={"Content-Type": "application/json"}
         )
 
@@ -749,10 +751,8 @@ class Cluster(object):
 
             if self.debug:
                 sample = kwargs.get(b'data', "")[:300]
-                Log.note("{{url}}:\n{{data|indent}}", url=url, data=sample)
+                Log.note("POST {{url}}\n{{data|indent}}", url=url, data=sample)
 
-            if self.debug:
-                Log.note("POST {{url}}", url=url)
             response = http.post(url, **kwargs)
             if response.status_code not in [200, 201]:
                 Log.error(response.reason.decode("latin1") + ": " + strings.limit(response.content.decode("latin1"), 100 if self.debug else 10000))
@@ -836,8 +836,13 @@ class Cluster(object):
         url = self.settings.host + ":" + unicode(self.settings.port) + path
 
         if self.debug:
-            sample = kwargs["data"][:300]
-            Log.note("PUT {{url}}:\n{{data|indent}}", url=url, data=sample)
+            data = kwargs.get("data")
+            if data:
+                data = data[:300]
+            else:
+                data = kwargs.get('json')
+
+            Log.note("PUT {{url}}:\n{{data|indent}}", url=url, data=data)
         try:
             response = http.put(url, **kwargs)
             if response.status_code not in [200]:

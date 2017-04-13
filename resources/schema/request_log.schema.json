@@ -8,7 +8,6 @@
 	"mappings": {
 		"request_log": {
 			"_source": {
-				"compress": true
 			},
 			"dynamic_templates": [
 				{
@@ -37,9 +36,7 @@
 				},
 				"query": {
 					"type": "object",
-					"enabled": false,
-					"index": "no",
-					"store": "yes"
+					"enabled": false
 				},
 				"data": {
 					"index": "not_analyzed",
@@ -48,9 +45,7 @@
 				},
 				"error": {
 					"type": "object",
-					"enabled": false,
-					"index": "no",
-					"store": "yes"
+					"enabled": false
 
 				},
 				"from": {

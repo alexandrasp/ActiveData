@@ -132,10 +132,10 @@ SCHEMA = {
             }}
         ],
         "_all": {"enabled": False},
-        "_source": {"compress": True, "enabled": True},
+        "_source": {"enabled": True},
         "properties": {
-            "params": {"type": "object", "dynamic": False, "index": "no"},
-            "template": {"type": "object", "dynamic": False, "index": "no"},
+            "params": {"type": "object", "dynamic": False},
+            "template": {"type": "object", "dynamic": False},
             "context": {
                 "type": "object",
                 "dynamic": False,
