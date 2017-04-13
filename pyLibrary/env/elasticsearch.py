@@ -254,7 +254,7 @@ class Index(Features):
             self.path + "/_query",
             data=convert.value2json(query),
             timeout=600,
-            params={"consistency": self.settings.consistency}
+            params={"wait_for_active_shards": self.settings.wait_for_active_shards}
         )
 
         for name, status in result._indices.items():
@@ -311,7 +311,7 @@ class Index(Features):
                     headers={"Content-Type": "text"},
                     timeout=self.settings.timeout,
                     retry=self.settings.retry,
-                    params={"consistency": self.settings.consistency}
+                    params={"wait_for_active_shards": self.settings.wait_for_active_shards}
                 )
                 items = response["items"]
 
