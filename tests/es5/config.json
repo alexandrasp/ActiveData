@@ -40,23 +40,23 @@
 		"debug": true
 	},
 	"debug": {
--		"trace": true,
--		"cprofile": {
--			"enabled": false,
--			"filename": "./results/profile.tab"
--		},
--		"log": [
--			{
--				"log_type": "console"
--			},
--			{
--				"log_type": "elasticsearch",
--				"host": "http://localhost",
--				"port": 9400,
--				"index": "debug_active_data",
--				"type": "active_data"
--			}
--		]
--	}
+		"trace": true,
+		"cprofile": {
+			"enabled": false,
+			"filename": "./results/profile.tab"
+		},
+		"log": [
+			{
+				"log_type": "console"
+			},
+			{
+				"log_type": "elasticsearch",
+				"host": "http://localhost",
+				"port": 9400,
+				"index": "debug_active_data",
+				"type": "active_data"
+			}
+		]
+	}
 
 }
