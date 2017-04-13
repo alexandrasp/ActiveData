@@ -39,31 +39,5 @@
 		"type": "test_result",
 		"debug": true
 	},
-	"debug": {
-		"trace": true,
-		"cprofile": {
-			"enabled": false,
-			"filename": "./results/profile.tab"
-		},
-		"log": [
-			{
-				"log_type": "console"
-			},
-			{
-				"log_type": "email",
-				"from_address": "klahnakoski@mozilla.com",
-				"to_address": "klahnakoski@mozilla.com",
-				"subject": "[ALERT][DEV]Problem with ActiveData Server",
-				"$ref": "file://~/private.json#email"
-			},
-			{
-				"log_type": "elasticsearch",
-				"host": "http://localhost",
-				"port": 9400,
-				"index": "debug_active_data",
-				"type": "active_data"
-			}
-		]
-	}
 
 }
