@@ -23,7 +23,7 @@
 	},
 	"request_logs": {
 		"host": "http://localhost",
-		"port": 9200,
+		"port": 9400,
 		"index": "active_data_requests",
 		"type": "request_log",
 		"schema": {
@@ -32,14 +32,14 @@
 	},
 	"saved_queries": {
 		"host": "http://localhost",
-		"port": 9200,
+		"port": 9400,
 		"index": "saved_queries",
 		"type": "query",
 		"debug": true
 	},
 	"elasticsearch": {
 		"host": "http://localhost",
-		"port": 9200,
+		"port": 9400,
 		"index": "testdata",
 		"type": "test_result",
 		"debug": true

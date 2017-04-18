@@ -5,9 +5,6 @@
 	},
 	"mappings": {
 		"code_coverage": {
-			"_source": {
-				"compress": true
-			},
 			"dynamic_templates": [
 				{
 					"default_ids": {

@@ -214,7 +214,6 @@ SCHEMA = {
                 "query": {
                     "type": "object",
                     "enabled": False,
-                    "index": "no",
                     "store": "yes"
                 }
             }

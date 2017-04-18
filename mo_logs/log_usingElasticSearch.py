@@ -128,14 +128,14 @@ SCHEMA = {
         "dynamic_templates": [
             {"everything_else": {
                 "match": "*",
-                "mapping": {"index": "no"}
+                "mapping": {}
             }}
         ],
         "_all": {"enabled": False},
         "_source": {"compress": True, "enabled": True},
         "properties": {
-            "params": {"type": "object", "dynamic": False, "index": "no"},
-            "template": {"type": "object", "dynamic": False, "index": "no"},
+            "params": {"type": "object", "dynamic": False},
+            "template": {"type": "object", "dynamic": False},
             "context": {
                 "type": "object",
                 "dynamic": False,

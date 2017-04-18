@@ -48,13 +48,6 @@
 		"log": [
 			{
 				"log_type": "console"
-			},
-			{
-				"log_type": "elasticsearch",
-				"host": "http://localhost",
-				"port": 9400,
-				"index": "debug_active_data",
-				"type": "active_data"
 			}
 		]
 	}

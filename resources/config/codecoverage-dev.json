@@ -9,14 +9,14 @@
 	},
 	"source": {
 		"host": "http://activedata.allizom.org",
-		"port": 9200,
+		"port": 9400,
 		"index": "coverage",
 		"type": "code_coverage",
 		"debug": false
 	},
 	"destination":{
 		"host": "http://activedata.allizom.org",
-		"port": 9200,
+		"port": 9400,
 		"index": "coverage-summary",
 		"type": "code_coverage",
 		"schema": "../schema/coverage.json",

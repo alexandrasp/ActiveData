@@ -2,4 +2,7 @@ cluster.name: lahnakoski_es5
 script.engine.painless.inline: true
 http.compression: true
 
+index.number_of_shards: 1
+index.number_of_replicas: 0
+
 http.port: 9400

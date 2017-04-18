@@ -649,11 +649,19 @@ class Cluster(object):
                 )
                 schema.settings.index.number_of_replicas = health.number_of_nodes - 1
 
-        self.post(
-            "/" + index,
-            data=schema,
-            headers={"Content-Type": "application/json"}
-        )
+        if self.version.startswith("5."):
+
+            self.put(
+                "/" + index,
+                data=convert.value2json(schema),
+                headers={"Content-Type": "application/json"}
+            )
+        else:
+            self.post(
+                "/" + index,
+                data=schema,
+                headers={"Content-Type": "application/json"}
+            )
 
         # CONFIRM INDEX EXISTS
         while True:

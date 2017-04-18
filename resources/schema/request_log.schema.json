@@ -7,9 +7,6 @@
 	},
 	"mappings": {
 		"request_log": {
-			"_source": {
-				"compress": true
-			},
 			"dynamic_templates": [
 				{
 					"default_strings": {
@@ -38,7 +35,6 @@
 				"query": {
 					"type": "object",
 					"enabled": false,
-					"index": "no",
 					"store": "yes"
 				},
 				"data": {
@@ -49,7 +45,6 @@
 				"error": {
 					"type": "object",
 					"enabled": false,
-					"index": "no",
 					"store": "yes"
 
 				},
