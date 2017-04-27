@@ -653,7 +653,7 @@ class Cluster(object):
 
             self.put(
                 "/" + index,
-                data=convert.value2json(schema),
+                data=schema,
                 headers={"Content-Type": "application/json"}
             )
         else:
